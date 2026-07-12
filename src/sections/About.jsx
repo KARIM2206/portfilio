@@ -1,8 +1,10 @@
+"use client";
 import { useRef } from "react";
 import Card from "../components/Card";
 import { Globe } from "../components/globe";
 import CopyEmailButton from "../components/CopyEmailButton";
 import { Frameworks } from "../components/Frameworks";
+import Image from "next/image";
 
 const About = () => {
   const grid2Container = useRef();
@@ -12,8 +14,11 @@ const About = () => {
       <div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[18rem] mt-12">
         {/* Grid 1 */}
         <div className="flex items-end grid-default-color grid-1">
-          <img
-            src="assets/coding-pov.png"
+          <Image
+            src="/assets/coding-pov.png"
+            alt="Karim coding"
+            width={600}
+            height={600}
             className="absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
           />
           <div className="z-10">

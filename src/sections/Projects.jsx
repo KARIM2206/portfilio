@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import Project from "../components/Project";
 import { myProjects } from "../constants";

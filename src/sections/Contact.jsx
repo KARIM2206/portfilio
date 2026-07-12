@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Alert from "../components/Alert";
@@ -30,24 +31,25 @@ const Contact = () => {
     try {
       console.log("From submitted:", formData);
       await emailjs.send(
-        "service_79b0nyj",
-        "template_17us8im",
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+  process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
         {
-          from_name: formData.name,
-          to_name: "Karim",
-          from_email: formData.email,
-          to_email: "karim56780y@gmail.com",
+          title: "New Message from Portfolio",
+          name: formData.name,
+          time: new Date().toLocaleString(),
           message: formData.message,
+          from_name: formData.name,
+          from_email: formData.email,
         },
-        "pn-Bw_mS1_QQdofuV"
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       );
       setIsLoading(false);
       setFormData({ name: "", email: "", message: "" });
-      showAlertMessage("success", "You message has been sent!");
+      showAlertMessage("success", "Your message has been sent!");
     } catch (error) {
       setIsLoading(false);
       console.log(error);
-      showAlertMessage("danger", "Somthing went wrong!");
+      showAlertMessage("danger", "Something went wrong!");
     }
   };
   return (

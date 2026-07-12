@@ -1,12 +1,17 @@
+"use client";
 import { Canvas, useFrame } from "@react-three/fiber";
 import HeroText from "../components/HeroText";
 import ParallaxBackground from "../components/parallaxBackground";
-import { Astronaut } from "../components/Astronaut";
 import { Float } from "@react-three/drei";
 import { useMediaQuery } from "react-responsive";
 import { easing } from "maath";
 import { Suspense } from "react";
 import Loader from "../components/Loader";
+import dynamic from "next/dynamic";
+
+const Astronaut = dynamic(() => import("../components/Astronaut").then((mod) => mod.Astronaut), {
+  ssr: false,
+});
 
 const Hero = () => {
   const isMobile = useMediaQuery({ maxWidth: 853 });
@@ -16,7 +21,7 @@ const Hero = () => {
       <ParallaxBackground />
       <figure
         className="absolute inset-0"
-        style={{ width: "100vw", height: "100vh" }}
+        style={{ width: "100vw", height: "100dvh" }}
       >
         <Canvas camera={{ position: [0, 1, 3] }}>
           <Suspense fallback={<Loader />}>

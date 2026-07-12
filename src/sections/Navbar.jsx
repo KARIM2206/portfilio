@@ -1,5 +1,7 @@
+"use client";
 import { useState } from "react";
 import { motion } from "motion/react";
+import Link from "next/link";
 function Navigation() {
   return (
     <ul className="nav-ul">
@@ -32,12 +34,12 @@ const Navbar = () => {
     <div className="fixed inset-x-0 z-20 w-full backdrop-blur-lg bg-primary/40">
       <div className="mx-auto c-space max-w-7xl">
         <div className="flex items-center justify-between py-2 sm:py-0">
-          <a
+          <Link
             href="/"
             className="text-xl font-bold transition-colors text-neutral-400 hover:text-white"
           >
             Karim
-          </a>
+          </Link>
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="flex cursor-pointer text-neutral-400 hover:text-white focus:outline-none sm:hidden"
@@ -58,7 +60,7 @@ const Navbar = () => {
           className="block overflow-hidden text-center sm:hidden"
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
-          style={{ maxHeight: "100vh" }}
+          style={{ maxHeight: "100dvh" }}
           transition={{ duration: 1 }}
         >
           <nav className="pb-5">
