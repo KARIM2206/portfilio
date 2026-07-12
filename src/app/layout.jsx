@@ -12,6 +12,10 @@ export const metadata = {
   metadataBase: new URL("https://karimyousef.com"),
   title: "Karim Yousef | Full Stack MERN Developer",
   description: "A modern, animated 3D developer portfolio of Karim Yousef, Full Stack MERN Developer.",
+  icons: {
+    icon: "/assets/profile.png",
+    apple: "/assets/profile.png",
+  },
   openGraph: {
     title: "Karim Yousef | Full Stack Developer",
     description: "Creative Full Stack Web Developer showcasing interactive 3D web experiences.",
